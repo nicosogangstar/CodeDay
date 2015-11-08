@@ -1,13 +1,9 @@
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.MenuContainer;
 import java.awt.Toolkit;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 
 
 public class Menu
@@ -19,6 +15,14 @@ public class Menu
 	static JFrame menuContainer;
 	public static void init()
 	{
+		//initialize all countries
+		Country[] countries = new Country[]
+		{
+				new Country("America", "flags/America.jpeg","songs/America.wav", new String[]{"The last democratic nation to abolish slavery", "Our only export is diabetes"}),
+				new Country("Russia", "flags/Russia.jpeg","songs/Russia.wav", new String[]{"Cyka blyat", "You wish you were as cool as us."})
+		};
+		
+		
 		menuContainer = new JFrame();
 		JPanel all = new JPanel();
 		//JLabel text = new JLabel("<html><br><br>CONNECT<br>HELP<br>SETTINGS</html>", SwingConstants.CENTER);
@@ -26,7 +30,7 @@ public class Menu
 		helpButton = new JButton("HELP");
 		settingsButton = new JButton("SETTINGS");
 		creditButton = new JButton("CREDIT");
-		Font font = new Font("Helvetica", 32, 40);
+		Font font = new Font("8BIT WONDER", 32, 40);
 		//button.setForeground(Color.WHITE);
 		connectButton.setFont(font);
 		helpButton.setFont(font);
@@ -42,6 +46,7 @@ public class Menu
 		menuContainer.setSize(sizeY, sizeY);
 		menuContainer.add(all);
 		menuContainer.setVisible(true);
+		//MusicBox.playSound("/Users/NicolasG/Desktop/Russia.wav");
 	}
 	public static void run()
 	{
@@ -65,5 +70,4 @@ public class Menu
 			}
 		}
 	}
-	
 }
